@@ -1,7 +1,11 @@
 import ctypes
-import time
+import os
 
-lenear_congruential_lib = ctypes.CDLL('./libLinearCongruential.so')
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+so_file_path = os.path.join(current_dir, 'libLinearCongruential.so')
+
+lenear_congruential_lib = ctypes.CDLL(so_file_path)
 
 lenear_congruential_lib.initialize.argtypes = (ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_int)
 lenear_congruential_lib.initialize.restype = None

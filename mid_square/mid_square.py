@@ -1,6 +1,10 @@
 import ctypes
+import os
 
-mid_square_lib = ctypes.CDLL('./libMidSquare.so')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+so_file_path = os.path.join(current_dir, 'libMidSquare.so')
+
+mid_square_lib = ctypes.CDLL(so_file_path)
 
 mid_square_lib.initialize.argtypes = [ctypes.c_int]
 mid_square_lib.initialize.restype = None

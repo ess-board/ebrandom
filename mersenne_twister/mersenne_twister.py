@@ -1,7 +1,10 @@
 import ctypes
-import time
+import os
 
-mersenne_twister = ctypes.CDLL('./libMersenneTwister.so')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+so_file_path = os.path.join(current_dir, 'libMersenneTwister.so')
+
+mersenne_twister = ctypes.CDLL(so_file_path)
 
 mersenne_twister.initialize.argtypes = [ctypes.c_int]
 mersenne_twister.initialize.restype = None
