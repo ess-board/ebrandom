@@ -36,9 +36,3 @@ def random01() -> float:
 
 def random01_list(length) -> list:
     return [mid_square_lib.getUD01() for _ in range(length)]
-
-
-print(random_list(1,10,10))
-print(random_list(1,10,10))
-print(random_list(1,10,10))
-print(random_list(1,10,10))
